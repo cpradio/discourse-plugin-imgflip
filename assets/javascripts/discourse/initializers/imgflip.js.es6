@@ -23,7 +23,7 @@ export default
         if (Discourse.SiteSettings.imgflip_enabled
           && Discourse.SiteSettings.imgflip_api_url
           && Discourse.SiteSettings.imgflip_api_username
-          && Discourse.SiteSettings.imgflip_api_key) {
+          && Discourse.SiteSettings.imgflip_api_password) {
           var view = this;
           var button_text = I18n.t("imgflip.composer_button_text");
           var btn = $('<button class="wmd-button wmd-imgflip-button" title="' + button_text + '" aria-label="' + button_text + '"></button>');
