@@ -8,12 +8,12 @@ export default Ember.View.extend(StringBuffer, {
   rawTemplate: "imgflip-result.raw",
 
   selectedClass: function() {
-    return this.get("selected") ? "selected" : "";
-  }.property("selected"),
+    return this.get("result.id") == this.get("controller.selectedMeme") ? "selected" : "";
+  }.property("selected", "controller.selectedMeme"),
 
   selectedChanged: function() {
     this.rerender();
-  }.observes('selected'),
+  }.observes('selected', 'controller.selectedMeme'),
 
   click: function() {
     this.set("selected", !this.get("selected"));

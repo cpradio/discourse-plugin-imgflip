@@ -1,5 +1,3 @@
-# VERY ALPHA, IT WORKS, BUT MAY HAVE BUGS
-
 # ImgFlip Plugin
 This plugin adds support for ImgFlip to quickly embed memes into a topic.
 
