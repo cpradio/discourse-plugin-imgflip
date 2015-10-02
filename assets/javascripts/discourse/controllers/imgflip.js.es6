@@ -36,7 +36,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
 
     Discourse.ajax(this.getUrl("get_memes")).then(
       function(resp) {
-        this.set("memes", resp);
+        this.set("memes", resp.data.memes);
         this.refresh();
       }.bind(this)
     );
