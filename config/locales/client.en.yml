@@ -1,0 +1,10 @@
+en:
+  js:
+    imgflip:
+      composer_button_text: "Open ImgFlip"
+      modal_title: "Pick ImgFlip Meme"
+      top-text: "Top Text"
+      top-text-placeholder: "Enter the top text for the meme here"
+      bottom-text: "Bottom Text"
+      bottom-text-placeholder: "Enter the bottom text for the meme here"
+      insert: "Insert Meme"

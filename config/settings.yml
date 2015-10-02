@@ -1,0 +1,13 @@
+plugins:
+  imgflip_enabled:
+    default: true
+    client: true
+  imgflip_api_url:
+    default: 'https://api.imgflip.com/'
+    client: true
+  imgflip_api_username:
+    default: 'imgflip_hubot'
+    client: true
+  imgflip_api_password:
+    default: 'imgflip_hubot'
+    client: true

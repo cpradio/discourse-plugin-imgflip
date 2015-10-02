@@ -1,0 +1,6 @@
+en:
+  site_settings:
+    imgflip_enabled: 'Show ImgFlip button on composer window?'
+    imgflip_api_url: 'The API Url for ImgFlip'
+    imgflip_api_username: 'The API Username for ImgFlip'
+    imgflip_api_password: 'The API Password for ImgFlip'
