@@ -37,8 +37,6 @@ export default Ember.Controller.extend(ModalFunctionality, {
 
   init: function () {
     this._super();
-    this.setProperties({"loading": true, "memes": [], topText: "", bottomText: "", selectedMeme: undefined });
-    this.getMemes();
   },
 
   getMemes: function() {
