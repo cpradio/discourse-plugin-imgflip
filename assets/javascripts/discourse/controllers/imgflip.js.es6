@@ -30,15 +30,23 @@ export default Ember.Controller.extend(ModalFunctionality, {
     this.set("loading", false);
   },
 
+  onShow: function() {
+    this.setProperties({"loading": true, "memes": [], topText: "", bottomText: "", selectedMeme: undefined });
+    this.getMemes();
+  },
+
   init: function () {
     this._super();
     this.setProperties({"loading": true, "memes": [], topText: "", bottomText: "", selectedMeme: undefined });
+    this.getMemes();
+  },
 
+  getMemes: function() {
     Discourse.ajax(this.getUrl("get_memes")).then(
-      function(resp) {
-        this.set("memes", resp.data.memes);
-        this.refresh();
-      }.bind(this)
+        function(resp) {
+          this.set("memes", resp.data.memes);
+          this.refresh();
+        }.bind(this)
     );
   },
 
