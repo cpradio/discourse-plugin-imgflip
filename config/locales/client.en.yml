@@ -1,5 +1,7 @@
 en:
   js:
+    composer:
+      imgflip_button_text: "Open ImgFlip"
     imgflip:
       composer_button_text: "Open ImgFlip"
       modal_title: "Pick ImgFlip Meme"

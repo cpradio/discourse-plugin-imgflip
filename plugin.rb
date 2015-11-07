@@ -1,6 +1,6 @@
 # name: discourse-plugin-imgflip
 # about: Add ImgFlip support
-# version: 0.2
+# version: 0.3
 # authors: Matthew Wilkin
 # url: https://github.com/cpradio/discourse-plugin-imgflip
 
