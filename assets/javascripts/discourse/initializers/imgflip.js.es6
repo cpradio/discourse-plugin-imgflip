@@ -2,6 +2,7 @@ import showModal from 'discourse/lib/show-modal';
 import ApplicationRoute from 'discourse/routes/application';
 import ComposerView from 'discourse/views/composer';
 import { onToolbarCreate } from 'discourse/components/d-editor';
+import NewComposer from 'discourse/components/d-editor';
 
 export default
 {
@@ -14,7 +15,24 @@ export default
       && siteSettings.imgflip_api_url
       && siteSettings.imgflip_api_username
       && siteSettings.imgflip_api_password) {
-      if (typeof Discourse.ComposerEditorComponent === "undefined") {
+      if (NewComposer !== "undefined") {
+        NewComposer.reopen({
+          actions: {
+            showImgFlip: function() {
+              showModal('imgflip').setProperties({composerView: this});
+            }
+          }
+        });
+
+        onToolbarCreate(toolbar => {
+          toolbar.addButton({
+            id: "imgflip_button",
+            group: "extras",
+            icon: "random",
+            action: 'showImgFlip'
+          });
+        });
+      } else {
         ApplicationRoute.reopen({
           actions: {
             showImgFlip: function (composerView) {
@@ -36,23 +54,6 @@ export default
             });
             $("#wmd-button-row,.wmd-button-row").append(btn);
           }
-        });
-      } else {
-        Discourse.DEditorComponent.reopen({
-          actions: {
-            showImgFlip: function() {
-              showModal('imgflip').setProperties({composerView: this});
-            }
-          }
-        });
-
-        onToolbarCreate(toolbar => {
-          toolbar.addButton({
-            id: "imgflip_button",
-            group: "extras",
-            icon: "random",
-            action: 'showImgFlip'
-          });
         });
       }
     }
