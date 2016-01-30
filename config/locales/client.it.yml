@@ -1,0 +1,12 @@
+it:
+  js:
+    composer:
+      imgflip_button_title: "Apri ImgFlip"
+    imgflip:
+      composer_button_text: "Apri ImgFlip"
+      modal_title: "Seleziona un Meme ImgFlip"
+      top-text: "Testo Superiore"
+      top-text-placeholder: "Digita qui il testo superiore per il meme"
+      bottom-text: "Testo Inferiore"
+      bottom-text-placeholder: "Digita qui il testo inferiore per il meme"
+      insert: "Inserisci il Meme"
