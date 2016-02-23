@@ -1,10 +1,11 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
+import NewComposer from 'discourse/components/d-editor';
+import showModal from 'discourse/lib/show-modal';
+import ApplicationRoute from 'discourse/routes/application';
+import ComposerView from 'discourse/views/composer';
 
 function priorToApi(container)
 {
-  import NewComposer from 'discourse/components/d-editor';
-  import showModal from 'discourse/lib/show-modal';
-
   const siteSettings = container.lookup('site-settings:main');
 
   if (siteSettings.imgflip_enabled
@@ -29,8 +30,6 @@ function priorToApi(container)
         });
       });
     } else {
-      import ApplicationRoute from 'discourse/routes/application';
-      import ComposerView from 'discourse/views/composer';
 
       ApplicationRoute.reopen({
         actions: {
@@ -60,9 +59,6 @@ function priorToApi(container)
 
 function initializePlugin(api)
 {
-  import NewComposer from 'discourse/components/d-editor';
-  import showModal from 'discourse/lib/show-modal';
-
   const siteSettings = api.container.lookup('site-settings:main');
 
   if (siteSettings.imgflip_enabled
@@ -93,6 +89,6 @@ export default
   name: 'imgflip',
   initialize(container)
   {
-    withPluginApi('0.1', api => initializePlugin(api), { noApi: () => oldCode(container) });
+    withPluginApi('0.1', api => initializePlugin(api), { noApi: () => priorToApi(container) });
   }
 };
