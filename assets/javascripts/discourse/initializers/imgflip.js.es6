@@ -1,4 +1,5 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
+import { onToolbarCreate } from 'discourse/components/d-editor';
 import NewComposer from 'discourse/components/d-editor';
 import showModal from 'discourse/lib/show-modal';
 import ApplicationRoute from 'discourse/routes/application';
