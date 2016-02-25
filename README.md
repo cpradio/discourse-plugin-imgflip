@@ -1,13 +1,13 @@
 # ImgFlip Plugin
 This plugin adds support for ImgFlip to quickly embed memes into a topic.
 
-Composer Window Button
+Composer Window Button  
 ![](https://raw.githubusercontent.com/cpradio/discourse-plugin-imgflip/master/screenshot-composer.png)
 
-Admin Settings
+Admin Settings  
 ![](https://raw.githubusercontent.com/cpradio/discourse-plugin-imgflip/master/screenshot-admin-settings.png)
 
-In Action
+In Action  
 ![](https://raw.githubusercontent.com/cpradio/discourse-plugin-imgflip/master/screenshot-action.gif)
 
 ## How to Help
