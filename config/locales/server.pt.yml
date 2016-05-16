@@ -1,0 +1,6 @@
+pt:
+  site_settings:
+    imgflip_enabled: 'Mostrar botão ImgFlip na janela de composição?'
+    imgflip_api_url: 'URL da API ImgFlip'
+    imgflip_api_username: 'Utilizador da API ImgFlip'
+    imgflip_api_password: 'Palavra-chave da API ImgFlip'
