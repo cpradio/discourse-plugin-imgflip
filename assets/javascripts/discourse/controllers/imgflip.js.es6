@@ -1,4 +1,5 @@
 import ModalFunctionality from 'discourse/mixins/modal-functionality';
+import AjaxLib from 'discourse/lib/ajax';
 
 export default Ember.Controller.extend(ModalFunctionality, {
   loading: true,
@@ -15,7 +16,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
       var selectedMeme = this.get("selectedMeme"),
           topText = this.get("topText"), bottomText = this.get("bottomText"),
           self = this;
-      Discourse.ajax(this.getUrl("caption_image") + "&template_id=" + selectedMeme +
+      AjaxLib.ajax(this.getUrl("caption_image") + "&template_id=" + selectedMeme +
         "&text0=" + topText + "&text1=" + bottomText).then(
           function(resp) {
             if (self.composerViewOld)
@@ -43,7 +44,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
   },
 
   getMemes: function() {
-    Discourse.ajax(this.getUrl("get_memes")).then(
+    AjaxLib.ajax(this.getUrl("get_memes")).then(
         function(resp) {
           this.set("memes", resp.data.memes);
           this.refresh();
