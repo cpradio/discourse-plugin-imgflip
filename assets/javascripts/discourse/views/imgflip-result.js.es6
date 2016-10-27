@@ -1,6 +1,6 @@
 import { bufferedRender } from 'discourse-common/lib/buffered-render';
 
-export default Ember.View.extend(bufferedRender, {
+export default Ember.View.extend(bufferedRender({
   result: Em.computed.alias("content"),
   tagName: "div",
   classNames: ["imgflip-imgwrap"],
@@ -26,4 +26,4 @@ export default Ember.View.extend(bufferedRender, {
     return this.get("result.url");
   }.property("result.url", "controller.selectedMeme")
 
-});
+}));
