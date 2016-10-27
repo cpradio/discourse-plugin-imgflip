@@ -1,6 +1,6 @@
-import StringBuffer from 'discourse/mixins/string-buffer';
+import { bufferedRender } from 'discourse-common/lib/buffered-render';
 
-export default Ember.View.extend(StringBuffer, {
+export default Ember.View.extend(bufferedRender, {
   result: Em.computed.alias("content"),
   tagName: "div",
   classNames: ["imgflip-imgwrap"],
