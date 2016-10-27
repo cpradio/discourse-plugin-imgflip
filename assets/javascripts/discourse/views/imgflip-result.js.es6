@@ -4,7 +4,6 @@ export default Ember.View.extend(bufferedRender({
   result: Em.computed.alias("content"),
   tagName: "div",
   classNames: ["imgflip-imgwrap"],
-  rawTemplate: "imgflip-result.raw",
 
   selectedClass: function() {
     return this.get("result.id") == this.get("controller.selectedMeme") ? "selected" : "";
@@ -24,6 +23,13 @@ export default Ember.View.extend(bufferedRender({
 
   imagePath: function() {
     return this.get("result.url");
-  }.property("result.url", "controller.selectedMeme")
+  }.property("result.url", "controller.selectedMeme"),
 
+  buildBuffer(buffer) {
+    let selectedClass = this.get('selectedClass');
+    let imagePath = this.get('imagePath');
+    let alternateText = this.get('alternateText');
+
+    buffer.push(`<img class="imgflip-img ${selectedClass}" src="${imagePath}" alt="${alternateText}" title="${alternateText}">`);
+  }
 }));
