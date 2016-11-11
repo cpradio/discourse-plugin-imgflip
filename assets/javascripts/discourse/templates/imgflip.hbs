@@ -10,7 +10,9 @@
       {{i18n "loading"}}
     {{else}}
       <div class="imgflip-box">
-          {{each result in memes itemView="imgflip-result"}}
+        {{#each memes as |result|}}
+          {{imgflip-result content=result pickItem="pickItem" selectedMeme=selectedMeme}}
+        {{/each}}
       </div>
     {{/if}}
   </div>
