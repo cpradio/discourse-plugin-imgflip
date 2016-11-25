@@ -6,5 +6,4 @@
 
 enabled_site_setting :imgflip_enabled
 
-register_asset "javascripts/discourse/templates/imgflip.hbs"
 register_asset 'stylesheets/imgflip.scss'
