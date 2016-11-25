@@ -13,7 +13,7 @@ function initializePlugin(api)
     Composer.reopen({
       actions: {
         showImgFlip: function () {
-          showModal('imgflip').setProperties({composerView: this});
+          showModal('imgflip', { title: "imgflip.modal_title" }).setProperties({composerView: this});
         }
       }
     });

@@ -1,8 +1,8 @@
-<div class="modal-body imgflip-modal" style="overflow: visible">
+{{#d-modal-body id="imgflip-modal"}}
   <div>
     <div class="top-text">
       <label for="top-text">{{i18n "imgflip.top-text"}}</label>
-      {{text-field id="top-text" value=controller.topText placeholderKey="imgflip.top-text-placeholder" }}
+      {{text-field id="top-text" value=topText placeholderKey="imgflip.top-text-placeholder" }}
     </div>
   </div>
   <div class="imgflip-content">
@@ -16,11 +16,11 @@
       </div>
     {{/if}}
   </div>
-</div>
+{{/d-modal-body}}
 <div class="modal-footer">
   <div class="bottom-text">
     <label for="bottom-text">{{i18n "imgflip.bottom-text"}}</label>
-    {{text-field id="bottom-text" value=controller.bottomText placeholderKey="imgflip.bottom-text-placeholder" }}
+    {{text-field id="bottom-text" value=bottomText placeholderKey="imgflip.bottom-text-placeholder" }}
   </div>
   <button class="btn btn-primary pull-right" {{action "apply"}}>{{i18n "imgflip.insert"}}</button>
 </div>
