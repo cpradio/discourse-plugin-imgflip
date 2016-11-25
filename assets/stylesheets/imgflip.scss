@@ -2,7 +2,9 @@
   content: "\f074"
 }
 
-.imgflip-modal {
+#imgflip-modal {
+  overflow: visible;
+
   .imgflip-content {
     max-height: 335px;
     min-height: 200px;
