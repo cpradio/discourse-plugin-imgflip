@@ -1,5 +1,4 @@
 import ModalFunctionality from 'discourse/mixins/modal-functionality';
-import AjaxLib from 'discourse/lib/ajax';
 
 export default Ember.Controller.extend(ModalFunctionality, {
   loading: true,
@@ -16,14 +15,14 @@ export default Ember.Controller.extend(ModalFunctionality, {
       var selectedMeme = this.get("selectedMeme"),
           topText = this.get("topText"), bottomText = this.get("bottomText"),
           self = this;
-      AjaxLib.ajax(this.getUrl("caption_image") + "&template_id=" + selectedMeme +
-        "&text0=" + topText + "&text1=" + bottomText).then(
+      $.ajax({ url: this.getUrl("caption_image") + "&template_id=" + selectedMeme +
+        "&text0=" + topText + "&text1=" + bottomText }).done(
           function(resp) {
             if (self.composerViewOld)
               self.composerViewOld.addMarkdown("![](" + resp.data.url + ")");
             else if (self.composerView)
               self.composerView._addText(self.composerView._getSelected(), "![](" + resp.data.url + ")");
-          }.bind(this)
+          }
       );
       this.set("selectedMeme", undefined);
       this.send('closeModal');
@@ -44,12 +43,11 @@ export default Ember.Controller.extend(ModalFunctionality, {
   },
 
   getMemes: function() {
-    AjaxLib.ajax(this.getUrl("get_memes")).then(
-        function(resp) {
-          this.set("memes", resp.data.memes);
-          this.refresh();
-        }.bind(this)
-    );
+    const self = this;
+    $.ajax({ url: this.getUrl("get_memes") }).done(function(resp) {
+      self.set("memes", resp.data.memes);
+      self.refresh();
+    });
   },
 
   getUrl: function(path) {
