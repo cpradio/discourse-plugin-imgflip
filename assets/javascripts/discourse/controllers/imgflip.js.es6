@@ -18,10 +18,11 @@ export default Ember.Controller.extend(ModalFunctionality, {
       $.ajax({ url: this.getUrl("caption_image") + "&template_id=" + selectedMeme +
         "&text0=" + topText + "&text1=" + bottomText }).done(
           function(resp) {
+            var url = resp.data.url.replace(/^http(s?)/gi, "https");
             if (self.composerViewOld)
-              self.composerViewOld.addMarkdown("![](" + resp.data.url + ")");
+              self.composerViewOld.addMarkdown("![](" + url + ")");
             else if (self.composerView)
-              self.composerView._addText(self.composerView._getSelected(), "![](" + resp.data.url + ")");
+              self.composerView._addText(self.composerView._getSelected(), "![](" + url + ")");
           }
       );
       this.set("selectedMeme", undefined);
